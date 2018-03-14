@@ -1,0 +1,295 @@
+{
+  "HiddenPaths": [],
+  "ExpandedPaths": [],
+  "ShowHidden": false,
+  "ShowAllFiles": false,
+  "CurrentPath": "",
+  "SaveDisabled": false,
+  "SSoTmeProjectId": "e1ad50f2-bf7e-4827-9a7e-373cf49df184",
+  "Name": "YesAndOST",
+  "RootPath": "C:\\Development\\YesAndOST",
+  "ProjectSettings": [
+    {
+      "ProjectSettingId": "0d4cd1a8-b399-4a99-b1e8-94d7a0347d10",
+      "Name": "project-name",
+      "Value": "YesAndOST"
+    }
+  ],
+  "ProjectTranspilers": [
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "d4c9b6b7-e40b-44d6-9550-86ef55cd9623",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "UrlToFile",
+        "DisplayName": "Url To File",
+        "Description": "Similar to curl, this command will perform a web request and return the resulting html as a filename",
+        "CreatedOn": "2017-06-01T19:43:25.853",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-9Seraqo9GN5ve9b1i2W8bg",
+        "LowerName": "urltofile",
+        "UpperName": "URLTOFILE",
+        "LowerHyphenName": "url-to-file",
+        "ReadMeMD": "This is helpful for pulling any resource from the internet into a local SSoTme build process.",
+        "InputDescriptionMD": "A url to an online resources.  At the moment this needs to be a \"public\" resource - but down the road, there is no reason this tool can't be improved to handle many different resources types (simple auth, google, facebook, api, dropbox, etc).",
+        "OutputDescriptionMD": "A local file (or potentially file-set) - downloaded from the URL provided.",
+        "ExampleMD": "ssotme url-to-file https://my-domain.com/some-data.abc",
+        "InputFileTypeId": "c24610e6-488d-4093-a318-c9fcf855cb56",
+        "OutputFileTypeId": "952e47eb-3448-4627-8dc4-93dab494c957",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "e9d09212-477a-4921-bd50-a06bb0531b4e",
+            "TranspilerId": "d4c9b6b7-e40b-44d6-9550-86ef55cd9623",
+            "Name": "v1",
+            "CreatedOn": "2017-06-01T19:43:32.353",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "8ae4f624-25ed-45bd-a003-d53376b68dcf",
+      "Name": "UrlToFile",
+      "RelativePath": "/SSoT",
+      "CommandLine": "url-to-file https://docs.google.com/spreadsheets/d/19IYbVvp44prgVzAysSFOdRRufSEQEgtxohuW4Fy-D48/export?format=xlsx binary -o YesAnd.xlsx"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "c49c2224-82c9-404f-bb8e-51c482d97db5",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "XlsxToXml",
+        "DisplayName": "Xlsx To Xml",
+        "Description": "Converts an Xlsx file into a single Xml file.",
+        "CreatedOn": "2017-10-06T16:52:05.873",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-pwRUdyqwEq8fPN8gkK7ADg",
+        "LowerName": "xlsxtoxml",
+        "UpperName": "XLSXTOXML",
+        "LowerHyphenName": "xlsx-to-xml",
+        "ReadMeMD": "First - the Xlsx file is passed to the Xlsx-to-csv converter.  This creates N CSV Files.  Each of these CSV files is passed to the Csv-To-Xml tool, which creates an xml file from the CSV, where the element names in the Xml are inferred from the names of the columns in the CSV data.\r\n\r\nOnce the Xml files have been produced, they are concatenated together into a single, Xml file that has ever value from the Xlsx file, but now in a \"queriable\" format.",
+        "InputFileTypeId": "39d3bcd1-d89f-4361-a3f7-7d5c295132cd",
+        "OutputFileTypeId": "f1b92a2a-3f83-4000-9b37-57f920e14419",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "79286eb3-21ed-4047-b2c9-bcfcfee794a9",
+            "TranspilerId": "c49c2224-82c9-404f-bb8e-51c482d97db5",
+            "Name": "v1",
+            "CreatedOn": "2017-10-06T16:52:11.62",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "bc265cb0-a362-4589-a7c8-119248d0938f",
+      "Name": "XlsxToXml",
+      "RelativePath": "/SSoT",
+      "CommandLine": "xlsx-to-xml -i .\\YesAnd.xlsx"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "8defe7a3-89cf-4989-b679-d9226519f622",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToNodeJSDocs",
+        "DisplayName": "Odxml To Node J S Docs",
+        "Description": "Creates easy to read/navigate html documentation for an Odxml Schema.",
+        "CreatedOn": "2017-08-29T21:18:01.293",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-038mgzT3ATTpDx-Ekoww0w",
+        "LowerName": "odxmltonodejsdocs",
+        "UpperName": "ODXMLTONODEJSDOCS",
+        "LowerHyphenName": "odxml-to-node-j-s-docs",
+        "ReadMeMD": "Examines the schema defined by an Odxml file and creates an interactive DataModel explorer for exploring the structure of the data model defined. \r\n\r\nCreates both a single page version of the docs, as well as a Node.JS website that can be started on demand to explore the data model more interactively.",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "d8fc84b7-442d-4c7a-92a0-eefc11391934",
+        "Category": "documentation",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "26af4ad8-fb5d-4027-8e4b-2260c62f3f24",
+            "TranspilerId": "8defe7a3-89cf-4989-b679-d9226519f622",
+            "Name": "v1",
+            "CreatedOn": "2017-08-29T21:18:03.463",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "47273bbb-78d0-4cd0-9fb5-1189c0b9de42",
+      "Name": "OdxmlToNodeJSDocs",
+      "RelativePath": "/Docs/Schema",
+      "CommandLine": "odxml42/odxml-to-nodejs-docs -i ..\\..\\ODXML\\DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "595b7fe7-7f64-44c2-b48c-d096d997211f",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToCSharpPOCOs",
+        "DisplayName": "Odxml To C Sharp P O C Os",
+        "Description": "Odxml To CSharp POCOs",
+        "CreatedOn": "2017-09-07T17:35:30.24",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-ClFrnG6AMwloJkLnUQ2d3Q",
+        "LowerName": "odxmltocsharppocos",
+        "UpperName": "ODXMLTOCSHARPPOCOS",
+        "LowerHyphenName": "odxml-to-c-sharp-p-o-c-os",
+        "ReadMeMD": "param name=\"include-list-prefix\" select=\"true\"\r\nWill include the fieldname of the referenced object before lists so that if a child object has multiple references to an object, the collections on the parent will be distinguished by the name of the child properties.\r\n\r\nparam name=include-sdm-expand=false\r\nparam name=include-load-methods=true\r\n\r\nparam name=\"include-inheritance\" select=\"true\"\r\nIf a relationship exists on the primary key fo the object, it will be infered to \"descend\" from the refrenced object.\r\n\r\nparam name=\"pluralize-json-references\" select=\"true\"\r\nDetermines if the \"original name\" should be pluraized in the Json serialization header.\r\n\r\nparam name=sdm--namespace = 'using KP.ODXML7.SqlDataManager.{project-name}.SqlDataManagement;'\r\n\r\n\r\nparam name=extensions-namespace = 'CoreLibrary.Extensions'\r\n\r\nparam name=serialize-to-original-names=\"'false\"  \r\nInidicates if the json formatting should use original names\r\n\r\nparam name=\"csproj-filename\" = ''\r\nparam name=\"output-csproj-filename\" = ''\r\nparam name=\"relative-path\" = ''\r\n",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "dot-net",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "a52a5130-bd3c-4974-8def-374cd52a4592",
+            "TranspilerId": "595b7fe7-7f64-44c2-b48c-d096d997211f",
+            "Name": "v1",
+            "CreatedOn": "2017-09-07T17:35:33.567",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "1791c07b-2034-4257-9b6f-504dfa9bcddb",
+      "Name": "OdxmlToCSharpPOCOs",
+      "RelativePath": "/DotNet/Lib/DataClasses",
+      "CommandLine": "odxml42/odxml-to-csharp-pocos -i ..\\..\\..\\ODXML\\DataSchema.odxml  -p include-inheritance=false"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "cf9074b7-4448-474a-adb6-cfffc0911e6c",
+        "Name": "SmqlToCSharpRabbitMQ",
+        "DisplayName": "Smql To C Sharp Rabbit M Q",
+        "Description": "Smql To CSharp RabbitMQ",
+        "CreatedOn": "2017-09-15T22:13:19.003",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-NIl_3Mw9hu0J9yChmk7KNw",
+        "LowerName": "smqltocsharprabbitmq",
+        "UpperName": "SMQLTOCSHARPRABBITMQ",
+        "LowerHyphenName": "smql-to-c-sharp-rabbit-m-q",
+        "ReadMeMD": "Parameters:\r\n - acronym = \"/SMQLexicon/Acronym\" \r\n - payload-type = concat($acronym, 'Payload')\r\n - actor-base-type = concat($acronym, 'ActorBase')\r\n",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "rabbitmq",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "b189ce7b-4086-4575-b89d-aafcbe02bba9",
+            "TranspilerId": "cf9074b7-4448-474a-adb6-cfffc0911e6c",
+            "Name": "v1",
+            "CreatedOn": "2017-09-15T22:13:25.117",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "0e1bb898-952c-41cb-a620-254e15d9588b",
+      "Name": "SmqlToCSharpRabbitMQ",
+      "RelativePath": "/DotNet/Lib/SassyMQ",
+      "CommandLine": "sassymq/smql-to-csharp-rabbitmq -i ..\\..\\..\\SSoT\\YesAnd.smql"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "91081c58-9a04-4646-8ffb-d5ca789916d2",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToCSharpSqlDataManager",
+        "DisplayName": "Odxml To C Sharp Sql Data Manager",
+        "Description": "Odxml To CSharp Sql Data Manager",
+        "CreatedOn": "2017-09-27T19:08:25.863",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-ClFrnG6AMwloJkLnUQ2d3Q",
+        "LowerName": "odxmltocsharpsqldatamanager",
+        "UpperName": "ODXMLTOCSHARPSQLDATAMANAGER",
+        "LowerHyphenName": "odxml-to-c-sharp-sql-data-manager",
+        "ReadMeMD": "Creates a Data Access Layerfor (DAL) SqlServer in CSharp which can natively read, write and update the file.",
+        "InputDescriptionMD": " - base-namespace (string)\r\n    default: 'KP.ODXML7.SqlDataManager'\r\n\r\n - project-nam (string)\r\n    default: 'DAL'\r\n\r\n - schema-name (string)\r\n    default: 'dbo'\r\n\r\nNo Default Values:\r\n\r\n - data-namespace (string)\r\n - extensions-namespace (string)\r\n - suffix (string)\r\n",
+        "OutputDescriptionMD": "Otuputs a CSharp library which can read/write/udpate the objects described by the input odxml file",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "dot-net",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "74255a51-7a73-4865-aa6f-e380bc22f50c",
+            "TranspilerId": "91081c58-9a04-4646-8ffb-d5ca789916d2",
+            "Name": "v1",
+            "CreatedOn": "2017-09-27T19:08:26.973",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "6d62f2ff-10bc-41f4-9021-ba9864a12bbd",
+      "Name": "OdxmlToCSharpSqlDataManager",
+      "RelativePath": "/DotNet/Lib/SqlDataManager",
+      "CommandLine": "odxml42/odxml-to-csharp-sql-data-manager -i ..\\..\\..\\ODXML\\DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "69a746d2-c0b1-4467-a020-9dd12b8bc098",
+        "Name": "SmqlToDocs",
+        "DisplayName": "Smql To Docs",
+        "Description": "Converts an Smql file into documentation.",
+        "CreatedOn": "2017-09-16T22:24:50.93",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-SO2KYSw3nYNV1LPUOAPf8w",
+        "LowerName": "smqltodocs",
+        "UpperName": "SMQLTODOCS",
+        "LowerHyphenName": "smql-to-docs",
+        "ExampleMD": "ssotme sassymq/SmqlToDocs -i .\\HelloWorld.smql",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "d8fc84b7-442d-4c7a-92a0-eefc11391934",
+        "Category": "sassymq",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "ea02027b-b8a4-4d73-ab46-c7d722c0cc38",
+            "TranspilerId": "69a746d2-c0b1-4467-a020-9dd12b8bc098",
+            "Name": "v1",
+            "CreatedOn": "2017-09-16T22:25:01.583",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "7b8b3ca3-e0af-4a6a-9669-b4df58f32afb",
+      "Name": "SmqlToDocs",
+      "RelativePath": "/Docs/SassyMQ",
+      "CommandLine": "sassymq/smql-to-docs -i ..\\..\\SSoT\\YesAnd.smql"
+    }
+  ]
+}

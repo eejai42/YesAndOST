@@ -1,0 +1,680 @@
+
+{
+  "Ontology": {
+    "Name": "",
+    "Namespace": "com.ssotme.ODXMLSchemas",
+    "OntologyGroups": {
+      "OntologyGroup": {
+        "Name": "dbo",
+        "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd",
+        "ObjectDefs": {
+          "ObjectDef": [
+            {
+              "Name": "Abstraction",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "AbstractionId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Abstraction",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "ARMId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Abstraction",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_Abstraction_ARM",
+                        "ReferencedObjectDef": "ARM",
+                        "ReferencedPropertyDef": "ARMId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "StatementId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Abstraction",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_Abstraction_Statement",
+                        "ReferencedObjectDef": "Statement",
+                        "ReferencedPropertyDef": "StatementId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "ParentAbstractionId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Abstraction",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_Abstraction_Abstraction",
+                        "ReferencedObjectDef": "Abstraction",
+                        "ReferencedPropertyDef": "AbstractionId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "APAAgreement",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "APAAgreementId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.APAAgreement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": "(newid())"
+                  },
+                  {
+                    "Name": "ARMPersonId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.APAAgreement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_APAAgreement_ARMPerson",
+                        "ReferencedObjectDef": "ARMPerson",
+                        "ReferencedPropertyDef": "ARMPersonId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "AbstractionId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.APAAgreement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_APAAgreement_Abstraction",
+                        "ReferencedObjectDef": "Abstraction",
+                        "ReferencedPropertyDef": "AbstractionId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "IAgree",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.APAAgreement",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "ARM",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ARMId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Name",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "NTEXT",
+                    "Length": "250",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Started",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Completed",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "IsComplete",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "((0))"
+                  },
+                  {
+                    "Name": "InviteCode",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "FocusAbstractionId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARM",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARM_Abstraction",
+                        "ReferencedObjectDef": "Abstraction",
+                        "ReferencedPropertyDef": "AbstractionId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "ARMChat",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ARMChatId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMChat",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "CreatedAt",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMChat",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "ARMPersonId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMChat",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARMChat_ARMPerson",
+                        "ReferencedObjectDef": "ARMPerson",
+                        "ReferencedPropertyDef": "ARMPersonId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "AbstractionId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMChat",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARMChat_Abstraction",
+                        "ReferencedObjectDef": "Abstraction",
+                        "ReferencedPropertyDef": "AbstractionId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "StatementId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMChat",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "(newid())",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARMChat_Statement",
+                        "ReferencedObjectDef": "Statement",
+                        "ReferencedPropertyDef": "StatementId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "ARMPerson",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ARMPersonId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMPerson",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "AvatarId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMPerson",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARMPerson_Avatar",
+                        "ReferencedObjectDef": "Avatar",
+                        "ReferencedPropertyDef": "AvatarId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "ARMId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMPerson",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_ARMPerson_ARM",
+                        "ReferencedObjectDef": "ARM",
+                        "ReferencedPropertyDef": "ARMId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "JoinedOn",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.ARMPerson",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "AuthToken",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "AuthTokenId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "PersonId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_AuthToken_Person",
+                        "ReferencedObjectDef": "Person",
+                        "ReferencedPropertyDef": "PersonId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "TemporaryAccessToken",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "HashedToken",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "NTEXT",
+                    "Length": "500",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "CreatedOn",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "ExpiresOn",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.AuthToken",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Avatar",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "AvatarId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Avatar",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Handle",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Avatar",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Description",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Avatar",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "Nickname",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Avatar",
+                    "DataType": "NTEXT",
+                    "Length": "10",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Person",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "PersonId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": "(newid())",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_Person_Avatar",
+                        "ReferencedObjectDef": "Avatar",
+                        "ReferencedPropertyDef": "AvatarId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "Name",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "EmailAddress",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "IsEmailVerified",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "((0))"
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "IsPhoneerified",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "((0))"
+                  },
+                  {
+                    "Name": "DOB",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "DATETIME",
+                    "Length": "8",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "SSN",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "NTEXT",
+                    "Length": "10",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "PreferredHandle",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Person",
+                    "DataType": "NTEXT",
+                    "Length": "50",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Statement",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "StatementId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Statement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": "(newid())"
+                  },
+                  {
+                    "Name": "StatementText",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Statement",
+                    "DataType": "NTEXT",
+                    "Length": "250",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "StrippedStatementText",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Statement",
+                    "DataType": "NTEXT",
+                    "Length": "250",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "OriginalMD5Hash",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Statement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "StrippedMD5Hash",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.Statement",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "YesAnd",
+              "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "YesAndId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.YesAnd",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "ARMChatId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.YesAnd",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_YesAnd_ARMChat",
+                        "ReferencedObjectDef": "ARMChat",
+                        "ReferencedPropertyDef": "ARMChatId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "Yes",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.YesAnd",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "YesAndAlso",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.YesAnd",
+                    "DataType": "BOOLEAN",
+                    "Length": "1",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": ""
+                  },
+                  {
+                    "Name": "YesAndARMChatId",
+                    "Namespace": "com.ssotme.ODXMLSchemas.SPECDB_YesAnd.dbo.YesAnd",
+                    "DataType": "GUID",
+                    "Length": "16",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "DefaultValue": "",
+                    "Relationships": {
+                      "Relationship": {
+                        "KeyName": "FK_YesAnd_ARMChat1",
+                        "ReferencedObjectDef": "ARMChat",
+                        "ReferencedPropertyDef": "ARMChatId"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+                    

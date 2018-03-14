@@ -1,0 +1,579 @@
+<YesAnd><Settings>
+  <Setting>
+    <Name>Name</Name>
+    <Value>Yes, And...</Value>
+    <Description>A sample project file</Description>
+  </Setting>
+  <Setting>
+    <Name>Version</Name>
+    <Value>v1.0</Value>
+    <Description>The current project version.</Description>
+  </Setting>
+  <Setting>
+    <Name>Intro</Name>
+    <Value>This project is an attempt to piggy back on the improv game yes, and.  The objective of this chat platform to to create a space where the goal is to achieve agreement whenever possible - and to generally move forward from a place of agreement (rather than one of disagreement).</Value>
+    <Description>The detailed description of the project.</Description>
+  </Setting>
+</Settings><AppStates>
+  <AppState>
+    <Name>APP_ROOT</Name>
+    <Description>A root state all other states derive from</Description>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>True</IsAbstract>
+  </AppState>
+  <AppState>
+    <Name>Conversations</Name>
+    <Description>The home page for the app</Description>
+    <ParentState>APP_ROOT</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Conversations</DisplayName>
+    <ImageName>Home.png</ImageName>
+    <Bmml>Mockups/Conversations.bmml</Bmml>
+    <MockupName>Conversations</MockupName>
+  </AppState>
+  <AppState>
+    <Name>Login</Name>
+    <Description>An app login page</Description>
+    <ParentState>APP_ROOT</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Login</DisplayName>
+    <ImageName>Login.png</ImageName>
+    <Bmml>Mockups/Login.bmml</Bmml>
+    <MockupName>Login</MockupName>
+  </AppState>
+  <AppState>
+    <Name>MagicLink</Name>
+    <Description>A page to wait for a link to get clicked</Description>
+    <ParentState>APP_ROOT</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Magic Link</DisplayName>
+    <ImageName>Register.png</ImageName>
+    <Bmml>Mockups/MagicLink.bmml</Bmml>
+    <MockupName>Magic Link</MockupName>
+  </AppState>
+  <AppState>
+    <Name>People</Name>
+    <Description>A list of people who you can talk to</Description>
+    <ParentState>APP_ROOT</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>People</DisplayName>
+    <ImageName>ContactUs.png</ImageName>
+    <Bmml>Mockups/People.bmml</Bmml>
+    <MockupName>People</MockupName>
+  </AppState>
+  <AppState>
+    <Name>ConversationTopic</Name>
+    <Description>A proposed conversation</Description>
+    <ParentState>Conversations</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Conversation Topic</DisplayName>
+    <MockupName>Conversation Topic</MockupName>
+  </AppState>
+  <AppState>
+    <Name>ConversationProposed</Name>
+    <Description>The other person has been notified and the conversation is waiting</Description>
+    <ParentState>ConversationTopic</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Conversation Proposed</DisplayName>
+    <MockupName>Conversation Proposed</MockupName>
+  </AppState>
+  <AppState>
+    <Name>Converation</Name>
+    <Description>The home page for a conversation</Description>
+    <ParentState>Conversations</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Converation</DisplayName>
+    <MockupName>Converation</MockupName>
+  </AppState>
+  <AppState>
+    <Name>ProposeAbstraction</Name>
+    <Description>Propose an Abstraction</Description>
+    <ParentState>Converation</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Propose Abstraction</DisplayName>
+    <MockupName>Propose Abstraction</MockupName>
+  </AppState>
+  <AppState>
+    <Name>AgreeToAbstraction</Name>
+    <Description>Agree (or don't agree) to an abstraction</Description>
+    <ParentState>Converation</ParentState>
+    <IsAppState>True</IsAppState>
+    <IsAbstract>False</IsAbstract>
+    <DisplayName>Agree To Abstraction</DisplayName>
+    <MockupName>Agree To Abstraction</MockupName>
+  </AppState>
+</AppStates><ProjectRoadmaps>
+  <ProjectRoadmap>
+    <Phase>Roadmap</Phase>
+    <Name>Roadmap</Name>
+    <DisplayName>Roadmap</DisplayName>
+    <Description>This document is the roadmap for the project.  It details all of the personalities and user stories provided by the app.</Description>
+    <Budget>1000</Budget>
+    <BudgetLeft>0</BudgetLeft>
+  </ProjectRoadmap>
+  <ProjectRoadmap>
+    <Phase>MVP</Phase>
+    <Name>MVP</Name>
+    <DisplayName>Minimum Viable Product</DisplayName>
+    <Description>An MVP allows for the lexicon associated with the most basic User Stories to be completed</Description>
+    <Budget>1000</Budget>
+    <BudgetLeft>1000</BudgetLeft>
+  </ProjectRoadmap>
+  <ProjectRoadmap>
+    <Phase>Phase2</Phase>
+    <Name>Phase2</Name>
+    <DisplayName>Phase 2</DisplayName>
+    <Description>More functionality added here</Description>
+    <Budget>1000</Budget>
+    <BudgetLeft>1000</BudgetLeft>
+  </ProjectRoadmap>
+  <ProjectRoadmap>
+    <Phase>Phase3</Phase>
+    <Name>Phase3</Name>
+    <DisplayName>Phase 3</DisplayName>
+    <Description>Additional features are added</Description>
+    <Budget>1000</Budget>
+    <BudgetLeft>1000</BudgetLeft>
+  </ProjectRoadmap>
+</ProjectRoadmaps><UserStories>
+  <UserStory>
+    <Name>MVP</Name>
+    <DisplayName>We think through Minimum Viable Product for the project</DisplayName>
+    <Description>Stakeholders develop a roadmap for the entire project.</Description>
+    <TestForSuccess>Any stakehold (Project owner, investor, developer, etc) can read this document (or some portion of this document) and have a sense of what the project is and how it works.</TestForSuccess>
+    <TestForFailure>If lots of additional information about the project must be conveyed by people involved (i.e. tribal knowledge) - then we can do better.</TestForFailure>
+    <Phase>Roadmap</Phase>
+    <IsComplete>True</IsComplete>
+    <TimeSpent>5</TimeSpent>
+    <BackendHours>0</BackendHours>
+    <DevHours>10</DevHours>
+    <TestingHours>2.5</TestingHours>
+    <Deployment>2.5</Deployment>
+    <Total_x003A_>15</Total_x003A_>
+    <RunningTotal>15</RunningTotal>
+    <CostAt85>1275</CostAt85>
+    <TimeSpentRunning>5</TimeSpentRunning>
+  </UserStory>
+  <UserStory>
+    <Name>Connect</Name>
+    <DisplayName>A user connects to the API</DisplayName>
+    <Description>A user establishes a connection with the coordinator.</Description>
+    <TestForSuccess>A user connects and receives any subsequent announcements from the Coordinator until they disconnect.</TestForSuccess>
+    <TestForFailure>If a user opens the app (or website), even as a guest, and then misses an annnouncment from the Coordinator, we have failed.</TestForFailure>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+    <TimeSpent>0</TimeSpent>
+    <BackendHours>1</BackendHours>
+    <DevHours>1</DevHours>
+    <TestingHours>0.25</TestingHours>
+    <Deployment>0.25</Deployment>
+    <Total_x003A_>1.5</Total_x003A_>
+    <RunningTotal>31.5</RunningTotal>
+    <CostAt85>2677.5</CostAt85>
+    <TimeSpentRunning>15</TimeSpentRunning>
+  </UserStory>
+  <UserStory>
+    <Name>SimpleConversation</Name>
+    <DisplayName>A simple conversation between two people</DisplayName>
+    <Description>A simple conversation is started by one person, accepted by another and then closed</Description>
+    <TestForSuccess>A conversation can be started/closed</TestForSuccess>
+    <TestForFailure>A conversation can not be started/closed</TestForFailure>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+    <TimeSpent>10</TimeSpent>
+    <BackendHours>0</BackendHours>
+    <DevHours>10</DevHours>
+    <TestingHours>2.5</TestingHours>
+    <Deployment>2.5</Deployment>
+    <Total_x003A_>15</Total_x003A_>
+    <RunningTotal>30</RunningTotal>
+    <CostAt85>2550</CostAt85>
+    <TimeSpentRunning>15</TimeSpentRunning>
+  </UserStory>
+  <UserStory>
+    <Name>ConversationChat</Name>
+    <DisplayName>A conversation chat occurs</DisplayName>
+    <Description>The two folks in the conversation can chat with one another</Description>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+  </UserStory>
+  <UserStory>
+    <Name>ConversationAbstraction</Name>
+    <DisplayName>A user can suggest an abstraction for the conversation</DisplayName>
+    <Description>A user suggests an abstraction (focus) for the conversation.</Description>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+  </UserStory>
+  <UserStory>
+    <Name>AbstractionAgreement</Name>
+    <DisplayName>Users netogiate inclusion of a new "concept" / "focus"</DisplayName>
+    <Description>A user agrees (or does not agreee) to an abstraction</Description>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+  </UserStory>
+  <UserStory>
+    <Name>FocusShifts</Name>
+    <DisplayName>User can shift the abstraction in focus</DisplayName>
+    <Description>A user can suggest (and the partner can agree) to a shift in focus.</Description>
+    <Phase>MVP</Phase>
+    <IsComplete>False</IsComplete>
+  </UserStory>
+</UserStories><Actors>
+  <Actor>
+    <DerivedActors>Person</DerivedActors>
+    <Name>Person</Name>
+    <Personality>Jimmy</Personality>
+    <Description>A dude who likes to have conversations</Description>
+    <ParentActor>ARManager</ParentActor>
+    <Age>21</Age>
+    <Bio>A person who participates in conversations</Bio>
+    <FullName>James Martin</FullName>
+    <EmailAddress>jimmy@jeemail.com</EmailAddress>
+    <Color>#000000</Color>
+    <BackgroundColor>#f3961c</BackgroundColor>
+    <Avatar>avatars/programmer.jpg</Avatar>
+  </Actor>
+  <Actor>
+    <DerivedActors>ARMediator</DerivedActors>
+    <Name>ARMediator</Name>
+    <Personality>Mediator Mindy</Personality>
+    <Description>An Abstraction Relationship Model Manager (conversation manager/mediator)</Description>
+    <Bio>The manager of conversations</Bio>
+    <FullName>Earth</FullName>
+    <EmailAddress>earth@solarsystem.net</EmailAddress>
+    <Color>#000000</Color>
+    <BackgroundColor>#f3961c</BackgroundColor>
+    <Avatar>avatars/world.png</Avatar>
+  </Actor>
+</Actors><Lexicons>
+  <Lexicon>
+    <From>Person</From>
+    <Message>Hello</Message>
+    <To>ARMediator</To>
+    <Category>General</Category>
+    <Description>Hello</Description>
+    <Payload>Person</Payload>
+    <PayloadDescription>A person who participates in one or more arms.</PayloadDescription>
+    <Action>Hello</Action>
+    <Response>Person</Response>
+    <ResponseDescription>A person who participates in one or more arms.</ResponseDescription>
+    <UserStory>Connect</UserStory>
+    <UserStoryDisplayName>A user connects to the API</UserStoryDisplayName>
+    <UserStoryDescription>A user establishes a connection with the coordinator.</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SeePeople</Message>
+    <To>ARMediator</To>
+    <Category>General</Category>
+    <Description>SeePeople</Description>
+    <Action>SeePeople</Action>
+    <Response>People</Response>
+    <ResponseDescription>LIST: A person who participates in one or more arms.</ResponseDescription>
+    <UserStory>Connect</UserStory>
+    <UserStoryDisplayName>A user connects to the API</UserStoryDisplayName>
+    <UserStoryDescription>A user establishes a connection with the coordinator.</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>StartConversation</Message>
+    <To>ARMediator</To>
+    <Category>Conversation</Category>
+    <Description>StartConversation</Description>
+    <Payload>ARM</Payload>
+    <PayloadDescription>An Abstraction Relationship Model</PayloadDescription>
+    <Action>StartConversation</Action>
+    <Response>ARM</Response>
+    <ResponseDescription>An Abstraction Relationship Model</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>ARMediator</From>
+    <Message>ConversationRequested</Message>
+    <To>Person</To>
+    <Category>Conversation</Category>
+    <Description>ConversationRequested</Description>
+    <Payload>ARM</Payload>
+    <PayloadDescription>An Abstraction Relationship Model</PayloadDescription>
+    <Action>ConversationRequested</Action>
+    <Response>ARM</Response>
+    <ResponseDescription>An Abstraction Relationship Model</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>YesAnd</Message>
+    <To>ARMediator</To>
+    <Category>Chat</Category>
+    <Description>YesAnd</Description>
+    <Payload>ARMChat</Payload>
+    <PayloadDescription>ARM Chat messages</PayloadDescription>
+    <Action>YesAnd</Action>
+    <Response>ARMChat</Response>
+    <ResponseDescription>ARM Chat messages</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>YesBut</Message>
+    <To>ARMediator</To>
+    <Category>Chat</Category>
+    <Description>YesBut</Description>
+    <Payload>ARMChat</Payload>
+    <PayloadDescription>ARM Chat messages</PayloadDescription>
+    <Action>YesBut</Action>
+    <Response>ARMChat</Response>
+    <ResponseDescription>ARM Chat messages</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>NoAnd</Message>
+    <To>ARMediator</To>
+    <Category>Chat</Category>
+    <Description>NoAnd</Description>
+    <Payload>ARMChat</Payload>
+    <PayloadDescription>ARM Chat messages</PayloadDescription>
+    <Action>NoAnd</Action>
+    <Response>ARMChat</Response>
+    <ResponseDescription>ARM Chat messages</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>NoBut</Message>
+    <To>ARMediator</To>
+    <Category>Chat</Category>
+    <Description>NoBut</Description>
+    <Payload>ARMChat</Payload>
+    <PayloadDescription>ARM Chat messages</PayloadDescription>
+    <Action>NoBut</Action>
+    <Response>ARMChat</Response>
+    <ResponseDescription>ARM Chat messages</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SuggestTopic</Message>
+    <To>ARMediator</To>
+    <Category>Conversation</Category>
+    <Description>SuggestTopic</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>SuggestTopic</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>ConversationAbstraction</UserStory>
+    <UserStoryDisplayName>A user can suggest an abstraction for the conversation</UserStoryDisplayName>
+    <UserStoryDescription>A user suggests an abstraction (focus) for the conversation.</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SuggestMoreSpecifically</Message>
+    <To>ARMediator</To>
+    <Category>Conversation</Category>
+    <Description>SuggestMoreSpecifically</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>SuggestMoreSpecifically</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>ConversationAbstraction</UserStory>
+    <UserStoryDisplayName>A user can suggest an abstraction for the conversation</UserStoryDisplayName>
+    <UserStoryDescription>A user suggests an abstraction (focus) for the conversation.</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>RequestAgreement</Message>
+    <To>ARMediator</To>
+    <Category>Agreement</Category>
+    <Description>RequestAgreement</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>RequestAgreement</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>AbstractionAgreement</UserStory>
+    <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
+    <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>ARMediator</From>
+    <Message>AgreementRequested</Message>
+    <To>Person</To>
+    <Category>Agreement</Category>
+    <Description>AgreementRequested</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>AgreementRequested</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>AbstractionAgreement</UserStory>
+    <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
+    <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SuggestAbstraction</Message>
+    <To>ARMediator</To>
+    <Category>Abstraction</Category>
+    <Description>SuggestAbstraction</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>SuggestAbstraction</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>AbstractionAgreement</UserStory>
+    <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
+    <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SuggestChangeInAbstraction</Message>
+    <To>ARMediator</To>
+    <Category>Abstraction</Category>
+    <Description>SuggestChangeInAbstraction</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>SuggestChangeInAbstraction</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>AbstractionAgreement</UserStory>
+    <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
+    <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>RequestFocus</Message>
+    <To>ARMediator</To>
+    <Category>Agreement</Category>
+    <Description>RequestFocus</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>RequestFocus</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>FocusShifts</UserStory>
+    <UserStoryDisplayName>User can shift the abstraction in focus</UserStoryDisplayName>
+    <UserStoryDescription>A user can suggest (and the partner can agree) to a shift in focus.</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>SuggestAbstractionRemoval</Message>
+    <To>ARMediator</To>
+    <Category>General</Category>
+    <Description>SuggestAbstractionRemoval</Description>
+    <Payload>Abstraction</Payload>
+    <PayloadDescription>Abstractions</PayloadDescription>
+    <Action>SuggestAbstractionRemoval</Action>
+    <Response>Abstraction</Response>
+    <ResponseDescription>Abstractions</ResponseDescription>
+    <UserStory>AbstractionAgreement</UserStory>
+    <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
+    <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
+  </Lexicon>
+</Lexicons><Entities>
+  <Entity>
+    <Name>Abstraction</Name>
+    <PluralName>Abstractions</PluralName>
+    <DisplayName>Abstraction</DisplayName>
+    <Description>Abstractions</Description>
+  </Entity>
+  <Entity>
+    <Name>APAAgreement</Name>
+    <PluralName>APAAgreements</PluralName>
+    <DisplayName>APAAgreement</DisplayName>
+    <Description>APAAgreements</Description>
+  </Entity>
+  <Entity>
+    <Name>ARM</Name>
+    <PluralName>ARMs</PluralName>
+    <DisplayName>ARM</DisplayName>
+    <Description>An Abstraction Relationship Model</Description>
+  </Entity>
+  <Entity>
+    <Name>ARMChat</Name>
+    <PluralName>ARMChats</PluralName>
+    <DisplayName>ARMChat</DisplayName>
+    <Description>ARM Chat messages</Description>
+  </Entity>
+  <Entity>
+    <Name>ARMPerson</Name>
+    <PluralName>ARMPersons</PluralName>
+    <DisplayName>ARMPerson</DisplayName>
+    <Description>People associated with the ARM</Description>
+  </Entity>
+  <Entity>
+    <Name>AuthToken</Name>
+    <PluralName>AuthTokens</PluralName>
+    <DisplayName>AuthToken</DisplayName>
+    <Description>Auth Token fore aperson</Description>
+  </Entity>
+  <Entity>
+    <Name>Person</Name>
+    <PluralName>People</PluralName>
+    <DisplayName>Person</DisplayName>
+    <Description>A person who participates in one or more arms.</Description>
+  </Entity>
+  <Entity>
+    <Name>Statement</Name>
+    <PluralName>Statements</PluralName>
+    <DisplayName>Statement</DisplayName>
+    <Description>Statements made by people, usually associated with ARMs</Description>
+  </Entity>
+  <Entity>
+    <Name>YesAnd</Name>
+    <PluralName>YesAnds</PluralName>
+    <DisplayName>YesAnd</DisplayName>
+    <Description>Yes, and - linking two statements (Hopefully with agreement)</Description>
+  </Entity>
+</Entities><AbstractRelationships>
+  <AbstractRelationship>
+    <Name>YesAnd</Name>
+    <DisplayName>Yes, and...</DisplayName>
+    <AgreeLeft>True</AgreeLeft>
+    <AgreeRight>True</AgreeRight>
+    <Support>True</Support>
+  </AbstractRelationship>
+  <AbstractRelationship>
+    <Name>YesBut</Name>
+    <DisplayName>Yes, but...</DisplayName>
+    <AgreeLeft>True</AgreeLeft>
+    <AgreeRight>True</AgreeRight>
+    <Support>False</Support>
+  </AbstractRelationship>
+  <AbstractRelationship>
+    <Name>NoAnd</Name>
+    <DisplayName>No, and...</DisplayName>
+    <AgreeLeft>False</AgreeLeft>
+    <AgreeRight>True</AgreeRight>
+    <Support>False</Support>
+  </AbstractRelationship>
+  <AbstractRelationship>
+    <Name>NoBut</Name>
+    <DisplayName>No, but...</DisplayName>
+    <AgreeLeft>False</AgreeLeft>
+    <AgreeRight>True</AgreeRight>
+    <Support>True</Support>
+  </AbstractRelationship>
+</AbstractRelationships></YesAnd>

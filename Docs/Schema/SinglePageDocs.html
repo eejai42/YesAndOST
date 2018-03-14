@@ -1,0 +1,231 @@
+<html><head><title>YesAndOST - Single Page Doc s</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" /></head><body><h3>YesAndOST Raw Data model</h3><a class="btn btn-sm btn-primary" href="Index.html"><<&nbsp;Back Interactive Object Explorer</a><table style="width: 100%"><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Abstraction"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#ARM">ARM</a>
+                        
+                        
+                            
+                                , <a href="#Statement">Statement</a>
+                        
+                        
+                            
+                                , <a href="#Abstraction">Abstraction</a>
+                        
+                        
+                        </div><h2>Abstraction</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Abstraction may have zero or more associated
+                          
+                            
+                                <a href="#Abstraction">
+                                
+                                    Abstractions
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#APAAgreement">
+                                
+                                    APAAgreements
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#ARM">
+                                
+                                    ARMs
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#ARMChat">
+                                
+                                    ARMChats
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AbstractionId</td><td>GUID</td><td></td></tr><tr><td>ARMId</td><td>GUID</td><td></td></tr><tr><td>StatementId</td><td>GUID</td><td></td></tr><tr><td>ParentAbstractionId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="APAAgreement"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#ARMPerson">ARMPerson</a>
+                        
+                        
+                            
+                                , <a href="#Abstraction">Abstraction</a>
+                        
+                        
+                        </div><h2>APAAgreement</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>APAAgreementId</td><td>GUID</td><td></td></tr><tr><td>ARMPersonId</td><td>GUID</td><td></td></tr><tr><td>AbstractionId</td><td>GUID</td><td></td></tr><tr><td>IAgree</td><td>BOOLEAN</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="ARM"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Abstraction">Abstraction</a>
+                        
+                        
+                        </div><h2>ARM</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each ARM may have zero or more associated
+                          
+                            
+                                <a href="#Abstraction">
+                                
+                                    Abstractions
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#ARMPerson">
+                                
+                                    ARMPersons
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ARMId</td><td>GUID</td><td></td></tr><tr><td>Name</td><td>NTEXT</td><td></td></tr><tr><td>Started</td><td>DATETIME</td><td></td></tr><tr><td>Completed</td><td>DATETIME</td><td></td></tr><tr><td>IsComplete</td><td>BOOLEAN</td><td></td></tr><tr><td>InviteCode</td><td>GUID</td><td></td></tr><tr><td>FocusAbstractionId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="ARMChat"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#ARMPerson">ARMPerson</a>
+                        
+                        
+                            
+                                , <a href="#Abstraction">Abstraction</a>
+                        
+                        
+                            
+                                , <a href="#Statement">Statement</a>
+                        
+                        
+                        </div><h2>ARMChat</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each ARMChat may have zero or more associated
+                          
+                            
+                                <a href="#YesAnd">
+                                
+                                    YesAnds
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#YesAnd">
+                                
+                                    YesAnds
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ARMChatId</td><td>GUID</td><td></td></tr><tr><td>CreatedAt</td><td>DATETIME</td><td></td></tr><tr><td>ARMPersonId</td><td>GUID</td><td></td></tr><tr><td>AbstractionId</td><td>GUID</td><td></td></tr><tr><td>StatementId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="ARMPerson"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Avatar">Avatar</a>
+                        
+                        
+                            
+                                , <a href="#ARM">ARM</a>
+                        
+                        
+                        </div><h2>ARMPerson</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each ARMPerson may have zero or more associated
+                          
+                            
+                                <a href="#APAAgreement">
+                                
+                                    APAAgreements
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#ARMChat">
+                                
+                                    ARMChats
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ARMPersonId</td><td>GUID</td><td></td></tr><tr><td>AvatarId</td><td>GUID</td><td></td></tr><tr><td>ARMId</td><td>GUID</td><td></td></tr><tr><td>JoinedOn</td><td>DATETIME</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="AuthToken"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Person">Person</a>
+                        
+                        
+                        </div><h2>AuthToken</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AuthTokenId</td><td>GUID</td><td></td></tr><tr><td>PersonId</td><td>GUID</td><td></td></tr><tr><td>TemporaryAccessToken</td><td>GUID</td><td></td></tr><tr><td>HashedToken</td><td>NTEXT</td><td></td></tr><tr><td>CreatedOn</td><td>DATETIME</td><td></td></tr><tr><td>ExpiresOn</td><td>DATETIME</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Avatar"></a>
+                        <hr /><h2>Avatar</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Avatar may have zero or more associated
+                          
+                            
+                                <a href="#ARMPerson">
+                                
+                                    ARMPersons
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Person">
+                                
+                                    Persons
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AvatarId</td><td>GUID</td><td></td></tr><tr><td>Handle</td><td>NTEXT</td><td></td></tr><tr><td>Description</td><td>NTEXT</td><td></td></tr><tr><td>Nickname</td><td>NTEXT</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Person"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Avatar">Avatar</a>
+                        
+                        
+                        </div><h2>Person</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Person may have zero or more associated
+                          
+                            
+                                <a href="#AuthToken">
+                                
+                                    AuthTokens
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>PersonId</td><td>GUID</td><td></td></tr><tr><td>Name</td><td>NTEXT</td><td></td></tr><tr><td>EmailAddress</td><td>NTEXT</td><td></td></tr><tr><td>IsEmailVerified</td><td>BOOLEAN</td><td></td></tr><tr><td>PhoneNumber</td><td>NTEXT</td><td></td></tr><tr><td>IsPhoneerified</td><td>BOOLEAN</td><td></td></tr><tr><td>DOB</td><td>DATETIME</td><td></td></tr><tr><td>SSN</td><td>NTEXT</td><td></td></tr><tr><td>PreferredHandle</td><td>NTEXT</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Statement"></a>
+                        <hr /><h2>Statement</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Statement may have zero or more associated
+                          
+                            
+                                <a href="#Abstraction">
+                                
+                                    Abstractions
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#ARMChat">
+                                
+                                    ARMChats
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>StatementId</td><td>GUID</td><td></td></tr><tr><td>StatementText</td><td>NTEXT</td><td></td></tr><tr><td>StrippedStatementText</td><td>NTEXT</td><td></td></tr><tr><td>OriginalMD5Hash</td><td>GUID</td><td></td></tr><tr><td>StrippedMD5Hash</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="YesAnd"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#ARMChat">ARMChat</a>
+                        
+                        
+                            
+                                , <a href="#ARMChat">ARMChat</a>
+                        
+                        
+                        </div><h2>YesAnd</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>YesAndId</td><td>GUID</td><td></td></tr><tr><td>ARMChatId</td><td>GUID</td><td></td></tr><tr><td>Yes</td><td>BOOLEAN</td><td></td></tr><tr><td>YesAndAlso</td><td>BOOLEAN</td><td></td></tr><tr><td>YesAndARMChatId</td><td>GUID</td><td></td></tr></table></body></html>
