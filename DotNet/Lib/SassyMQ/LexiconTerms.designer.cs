@@ -168,6 +168,22 @@ namespace SassyMQ.YA.Lib.RabbitMQ
                 Category = "general"
             };
             
+            Lexicon.TermsByKey[LexiconTermEnum.person_directmessage_armediator] = new LexiconTerm() {
+                Term = LexiconTermEnum.person_directmessage_armediator,
+                Sender = "person",
+                Verb = "directmessage",
+                Receiver = "armediator",
+                Category = "chat"
+            };
+            
+            Lexicon.TermsByKey[LexiconTermEnum.armediator_dmforyou_person] = new LexiconTerm() {
+                Term = LexiconTermEnum.armediator_dmforyou_person,
+                Sender = "armediator",
+                Verb = "dmforyou",
+                Receiver = "person",
+                Category = "chat"
+            };
+            
         }
     }
 }

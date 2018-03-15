@@ -147,6 +147,15 @@ export class Home {
             // Do something here with <b>reply.body.Abstraction</b>
          });
         
+        
+         // Say "Direct Message" to ARMediator
+         // A mediated directed message (through ARMediator)
+         var payload = this.person.createPayload();
+         payload.Statement = {...};
+         this.person.DirectMessage(payload, (reply) {
+            // Do something here with <b>reply.body.Statement</b>
+         });
+        
 
         
          <b>// Listen for messages</b>
@@ -163,6 +172,13 @@ export class Home {
          // AgreementRequested
          this.person.onAgreementRequested((message) {
             // Do something here with <b>message.body.Abstraction</b>
+         });
+        
+        
+         // Hear D M For You from ARMediator
+         // A mediated directed message (through ARMediator)
+         this.person.onDMForYou((message) {
+            // Do something here with <b>message.body.Statement</b>
          });
         
 
@@ -199,6 +215,15 @@ export class Home {
          payload.Abstraction = {...};
          this.armediator.AgreementRequested(payload, (reply) {
             // Do something here with <b>reply.body.Abstraction</b>
+         });
+        
+        
+         // Say "D M For You" to Person
+         // A mediated directed message (through ARMediator)
+         var payload = this.armediator.createPayload();
+         payload.Statement = {...};
+         this.armediator.DMForYou(payload, (reply) {
+            // Do something here with <b>reply.body.Statement</b>
          });
         
 
@@ -301,6 +326,13 @@ export class Home {
          // SuggestAbstractionRemoval
          this.armediator.onSuggestAbstractionRemoval((message) {
             // Do something here with <b>message.body.Abstraction</b>
+         });
+        
+        
+         // Hear Direct Message from Person
+         // A mediated directed message (through ARMediator)
+         this.armediator.onDirectMessage((message) {
+            // Do something here with <b>message.body.Statement</b>
          });
         
 

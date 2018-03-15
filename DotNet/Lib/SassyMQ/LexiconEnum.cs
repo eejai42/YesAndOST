@@ -9,6 +9,8 @@ namespace SassyMQ.YA.Lib.RabbitMQ
     {
         armediator_agreementrequested_person, 
         armediator_conversationrequested_person, 
+        armediator_dmforyou_person, 
+        person_directmessage_armediator, 
         person_hello_armediator, 
         person_noand_armediator, 
         person_nobut_armediator, 

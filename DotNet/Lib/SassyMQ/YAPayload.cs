@@ -13,5 +13,7 @@ namespace SassyMQ.YA.Lib.RMQActors
         public Person Person { get; set; }
         public List<Avatar> People { get; set; }
         public Avatar Avatar { get; set; }
+        public bool IsDirectMessage { get; internal set; }
+        public Statement Statement { get; set; }
     }
 }

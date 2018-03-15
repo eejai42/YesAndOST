@@ -26,7 +26,13 @@ namespace WindowsYesAndApp
             InitializeComponent();
             this.PersonActor = new SMQPerson();
             this.PersonActor.ReplyTo += PersonActor_ReplyTo;
+            this.PersonActor.ARMediatorDMForYouReceived += PersonActor_ARMediatorDMForYouReceived;
 
+        }
+
+        private void PersonActor_ARMediatorDMForYouReceived(object sender, PayloadEventArgs<YAPayload> e)
+        {
+            MessageBox.Show(this, e.Payload.Statement.StatementText);
         }
 
         private void PersonActor_ReplyTo(object sender, PayloadEventArgs<YAPayload> e)
@@ -42,6 +48,9 @@ namespace WindowsYesAndApp
             {
                 listBox1.DataSource = e.Payload.People;
             }
+            else if (e.Payload.IsLexiconTerm(LexiconTermEnum.armediator_dmforyou_person))
+            {
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,12 +62,28 @@ namespace WindowsYesAndApp
         private void button1_Click(object sender, EventArgs e)
         {
             var helloPayload = this.PersonActor.CreatePayload();
+            helloPayload.DirectMessageQueue = this.PersonActor.QueueName;
             helloPayload.Person = new YesAndOST.Lib.DataClasses.Person()
             {
                 EmailAddress = this._emailAddressTextBox1.Text
             };
 
             this.PersonActor.PersonHello(helloPayload);
+        }
+
+        private void _sendDMButton_Click(object sender, EventArgs e)
+        {
+            var sendDMPayload = this.PersonActor.CreatePayload();
+            sendDMPayload.Person = this.Person;
+            sendDMPayload.Avatar = this.listBox1.SelectedItem as Avatar;
+            sendDMPayload.Statement = new Statement()
+            {
+                StatementText = _dmTextBox.Text
+            };
+
+            _dmTextBox.Text = String.Empty;
+
+            this.PersonActor.PersonDirectMessage(sendDMPayload);
         }
     }
 }

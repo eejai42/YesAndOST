@@ -60,6 +60,11 @@ namespace SassyMQ.YA.Lib.RMQActors
                 this.OnARMediatorAgreementRequestedReceived(payload);
             }
         
+            else  if (payload.IsLexiconTerm(LexiconTermEnum.armediator_dmforyou_person)) 
+            {
+                this.OnARMediatorDMForYouReceived(payload);
+            }
+        
             } catch (Exception ex) {
                 payload.Exception = ex;
             }
@@ -87,6 +92,17 @@ namespace SassyMQ.YA.Lib.RMQActors
             this.LogMessage(payload, "Agreement Requested - AgreementRequested");
             var plea = new PayloadEventArgs<YAPayload>(payload);
             this.Invoke(this.ARMediatorAgreementRequestedReceived, plea);
+        }
+        
+        /// <summary>
+        /// Responds to: D M For You - A mediated directed message (through ARMediator)
+        /// </summary>
+        public event System.EventHandler<PayloadEventArgs<YAPayload>> ARMediatorDMForYouReceived;
+        protected virtual void OnARMediatorDMForYouReceived(YAPayload payload)
+        {
+            this.LogMessage(payload, "D M For You - A mediated directed message (through ARMediator)");
+            var plea = new PayloadEventArgs<YAPayload>(payload);
+            this.Invoke(this.ARMediatorDMForYouReceived, plea);
         }
         
         /// <summary>
@@ -505,6 +521,36 @@ namespace SassyMQ.YA.Lib.RMQActors
             
             this.SendMessage(payload, "Suggest Abstraction Removal - SuggestAbstractionRemoval",
             "personmic", "armediator.general.person.suggestabstractionremoval");
+        }
+
+
+        
+        /// <summary>
+        /// Direct Message - A mediated directed message (through ARMediator)
+        /// </summary>
+        public void PersonDirectMessage() 
+        {
+            this.PersonDirectMessage(this.CreatePayload());
+        }
+
+        /// <summary>
+        /// Direct Message - A mediated directed message (through ARMediator)
+        /// </summary>
+        public void PersonDirectMessage(System.String content) 
+        {
+            var payload = this.CreatePayload();
+            payload.Content = content;
+            this.PersonDirectMessage(payload);
+        }
+
+        /// <summary>
+        /// Direct Message - A mediated directed message (through ARMediator)
+        /// </summary>
+        public void PersonDirectMessage(YAPayload payload)
+        {
+            
+            this.SendMessage(payload, "Direct Message - A mediated directed message (through ARMediator)",
+            "personmic", "armediator.chat.person.directmessage");
         }
 
 

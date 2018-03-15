@@ -492,6 +492,36 @@
     <UserStoryDisplayName>Users netogiate inclusion of a new "concept" / "focus"</UserStoryDisplayName>
     <UserStoryDescription>A user agrees (or does not agreee) to an abstraction</UserStoryDescription>
   </Lexicon>
+  <Lexicon>
+    <From>Person</From>
+    <Message>DirectMessage</Message>
+    <To>ARMediator</To>
+    <Category>Chat</Category>
+    <Description>A mediated directed message (through ARMediator)</Description>
+    <Payload>Statement</Payload>
+    <PayloadDescription>Statements made by people, usually associated with ARMs</PayloadDescription>
+    <Action>ARMediator forwards messages</Action>
+    <Response>Statement</Response>
+    <ResponseDescription>Statements made by people, usually associated with ARMs</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
+  <Lexicon>
+    <From>ARMediator</From>
+    <Message>DMForYou</Message>
+    <To>Person</To>
+    <Category>Chat</Category>
+    <Description>A mediated directed message (through ARMediator)</Description>
+    <Payload>Statement</Payload>
+    <PayloadDescription>Statements made by people, usually associated with ARMs</PayloadDescription>
+    <Action>message received</Action>
+    <Response>Statement</Response>
+    <ResponseDescription>Statements made by people, usually associated with ARMs</ResponseDescription>
+    <UserStory>SimpleConversation</UserStory>
+    <UserStoryDisplayName>A simple conversation between two people</UserStoryDisplayName>
+    <UserStoryDescription>A simple conversation is started by one person, accepted by another and then closed</UserStoryDescription>
+  </Lexicon>
 </Lexicons><Entities>
   <Entity>
     <Name>Abstraction</Name>
