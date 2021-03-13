@@ -7,7 +7,7 @@
   "SaveDisabled": false,
   "SSoTmeProjectId": "e1ad50f2-bf7e-4827-9a7e-373cf49df184",
   "Name": "YesAndOST",
-  "RootPath": "C:\\Development\\YesAndOST",
+  "RootPath": "C:\\Users\\auto1\\go\\src\\github.com\\eejai42\\YesAndOST",
   "ProjectSettings": [
     {
       "ProjectSettingId": "0d4cd1a8-b399-4a99-b1e8-94d7a0347d10",
@@ -183,7 +183,7 @@
         "Description": "Smql To CSharp RabbitMQ",
         "CreatedOn": "2017-09-15T22:13:19.003",
         "IsActive": true,
-        "CurrentRoutingKey": "amq.gen-NIl_3Mw9hu0J9yChmk7KNw",
+        "CurrentRoutingKey": "amq.gen-GZt_WPA6iq6kpkhR-QMoHw",
         "LowerName": "smqltocsharprabbitmq",
         "UpperName": "SMQLTOCSHARPRABBITMQ",
         "LowerHyphenName": "smql-to-c-sharp-rabbit-m-q",
@@ -208,10 +208,10 @@
         ]
       },
       "CLIHandler": null,
-      "ProjectTranspilerId": "0e1bb898-952c-41cb-a620-254e15d9588b",
+      "ProjectTranspilerId": "b483e06b-e7b2-4c52-a808-eafda8a115ec",
       "Name": "SmqlToCSharpRabbitMQ",
       "RelativePath": "/DotNet/Lib/SassyMQ",
-      "CommandLine": "sassymq/smql-to-csharp-rabbitmq -i ..\\..\\..\\SSoT\\YesAnd.smql"
+      "CommandLine": "sassymq/smql-to-csharp-rabbitmq -i ..\\..\\..\\SSoT\\YesAnd.smql -p legacy=false"
     },
     {
       "MatchedTranspiler": {
